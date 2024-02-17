@@ -1,17 +1,18 @@
 import { useState } from "react";
 import { addTodo } from "../application/todo";
 import { Todo } from "../domain/Todo";
-import { Button, Checkbox, TextField } from "@mui/material";
+import { Checkbox, Fab, TextField } from "@mui/material";
+import { Grid, Box } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 
 const AddTodo = () => {
   const [title, setTitle] = useState("");
   const [isChecked, setIsChecked] = useState(false);
 
-
-const handleSubmit = async (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const newTodo: Omit<Todo, 'id'> = {
+    const newTodo: Omit<Todo, "id"> = {
       title: title,
       completed: isChecked,
     };
@@ -21,21 +22,32 @@ const handleSubmit = async (event: React.FormEvent) => {
     // フォームをリセット
     setTitle("");
     setIsChecked(false);
-};
+  };
 
   return (
     <form onSubmit={handleSubmit}>
-      <TextField
-      value={title}
-      onChange={(e) => setTitle(e.target.value)}
-      id="outlined-basic" label="やることを書く" variant="outlined" />
-      <Checkbox
-        checked={isChecked}
-        onChange={(e) => setIsChecked(e.target.checked)}
-       />
-      <Button
-        type="submit"
-       variant="contained">タスクを追加</Button>
+      <Grid container direction="row" alignItems="center" spacing={2}>
+        <Grid item>
+          <TextField
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            id="outlined-basic"
+            label="やることを書く"
+            variant="outlined"
+          />
+        </Grid>
+        <Grid item>
+          <Checkbox
+            checked={isChecked}
+            onChange={(e) => setIsChecked(e.target.checked)}
+          />
+        </Grid>
+      </Grid>
+      <Box position="fixed" right={20} bottom={20}>
+        <Fab color="primary" aria-label="add" type="submit">
+          <AddIcon />
+        </Fab>
+      </Box>
     </form>
   );
 };
