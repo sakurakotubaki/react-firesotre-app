@@ -12,6 +12,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import { red } from "@mui/material/colors";
 import { Link } from "react-router-dom";
+import SignOutButton from "./SignOutButton";
 
 
 const primary = red[500];
@@ -38,6 +39,7 @@ const GetTodo = memo(() => {
 
   return (
     <div>
+      <SignOutButton />
       <Button variant="outlined" size="large" component={Link} to="/add" endIcon={<AddIcon />}>
         タスクを追加
       </Button>
