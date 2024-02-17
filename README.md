@@ -35,3 +35,18 @@ src
 ```
 
 applicationは、ロジックを書いたメソッドを配置。domainは、Firestoreのコレクションに合わせて、interfaceを定義。infraには、Firebaseと接続をするファイルを配置。presentationには、UIとコンポーネントを配置する。
+
+## MUIを導入してデザインを整える
+公式サイトから追加する。
+
+https://mui.com/material-ui/getting-started/installation/
+
+1. 必要なpackageをinstall
+```bash
+npm install @mui/material @emotion/react @emotion/styled
+```
+
+2. iconが必要なので追加
+```bash
+npm install @mui/icons-material
+```
