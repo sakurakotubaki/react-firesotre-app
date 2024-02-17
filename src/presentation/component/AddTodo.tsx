@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { addTodo } from "../application/todo";
-import { Todo } from "../domain/Todo";
+import { addTodo } from "../../application/todo";
+import { Todo } from "../../domain/Todo";
 import { Checkbox, Fab, TextField, FormControlLabel, FormHelperText } from "@mui/material";
 import { Grid, Box } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";

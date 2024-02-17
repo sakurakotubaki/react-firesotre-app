@@ -50,3 +50,28 @@ npm install @mui/material @emotion/react @emotion/styled
 ```bash
 npm install @mui/icons-material
 ```
+
+## react-routerを導入する
+ページ遷移するには、packageが必要。
+
+```bash
+npm install react-router-dom@6
+```
+
+Viteを使用している場合は、`main.tsx`を修正する。
+```ts
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+```
+
+`App.tsx`を修正する
+```tsx
+
+```
