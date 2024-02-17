@@ -1,6 +1,7 @@
 import { useEffect, useState, memo } from "react";
 import { getTodos, deleteTodo } from "../application/todo";
 import { Todo } from "../domain/Todo";
+import { IconButton } from "@mui/material";
 
 const GetTodo = memo(() => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -29,6 +30,9 @@ const GetTodo = memo(() => {
           <li key={todo.id}>
             {todo.title}
             <button onClick={() => handleDelete(todo)}>Delete</button>
+            <IconButton aria-label="delete" size="large">
+  <DeleteIcon fontSize="inherit" />
+</IconButton>
           </li>
         ))}
       </ul>

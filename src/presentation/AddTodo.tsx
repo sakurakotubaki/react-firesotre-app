@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { addTodo } from "../application/todo";
 import { Todo } from "../domain/Todo";
+import { Button, Checkbox, TextField } from "@mui/material";
 
 const AddTodo = () => {
   const [title, setTitle] = useState("");
@@ -24,17 +25,17 @@ const handleSubmit = async (event: React.FormEvent) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <input
-        type="checkbox"
+      <TextField
+      value={title}
+      onChange={(e) => setTitle(e.target.value)}
+      id="outlined-basic" label="やることを書く" variant="outlined" />
+      <Checkbox
         checked={isChecked}
         onChange={(e) => setIsChecked(e.target.checked)}
-      />
-      <button type="submit">Add Todo</button>
+       />
+      <Button
+        type="submit"
+       variant="contained">タスクを追加</Button>
     </form>
   );
 };
